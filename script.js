@@ -1624,6 +1624,10 @@ else {
 activeProfile.currentRegimen =
     regimen;
 
+    console.log("Selected prep:", selectedPrep);
+console.log("Selected regimen:", regimen);
+console.log("Current regimen:", activeProfile.currentRegimen);
+
 
     // =========================
     // Create summary
