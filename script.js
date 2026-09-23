@@ -974,7 +974,129 @@ text:
 
 }
 
+// =========================
+// Get Prep Tasks
+// =========================
 
+function getPrepTasks(
+    dayId,
+    dayBefore,
+    appointmentHour,
+    appointmentDate
+) {
+
+    let tasks = [];
+
+    const regimen =
+        activeProfile.currentRegimen;
+
+
+    // =========================
+    // Fixed hospital schedules
+    // =========================
+
+    if (regimen.fixedPrepTimes) {
+
+        regimen.prepSchedule.forEach(
+            function(prep, index) {
+
+                if (prep.dayBefore === dayBefore) {
+
+                    tasks.push({
+
+                        id:
+                            dayId +
+                            "-prep" +
+                            index,
+
+                        text:
+                            prep.time +
+                            " " +
+                            prep.text,
+
+                        type: "prep"
+
+                    });
+
+                }
+
+            }
+        );
+
+    }
+
+
+    // =========================
+    // Flexible schedules
+    // =========================
+
+    else {
+
+        // First dose
+
+        if (
+            dayBefore ===
+            regimen.firstDoseDay
+        ) {
+
+            tasks.push({
+
+                id:
+                    dayId +
+                    "-prep1",
+
+                text:
+                    regimen.firstDoseTime +
+                    " " +
+                    regimen.firstDoseText,
+
+                type: "prep"
+
+            });
+
+        }
+
+
+        // Second dose
+
+        if (dayBefore === 0) {
+
+            const secondDose =
+                new Date(appointmentDate);
+
+            secondDose.setHours(
+                appointmentHour - 5
+            );
+
+
+            tasks.push({
+
+                id:
+                    dayId +
+                    "-prep2",
+
+                text:
+                    secondDose.toLocaleTimeString(
+                        [],
+                        {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        }
+                    ) +
+                    " " +
+                    regimen.secondDoseText,
+
+                type: "prep"
+
+            });
+
+        }
+
+    }
+
+    return tasks;
+
+}
 // =========================
 // Standard Day
 // =========================
