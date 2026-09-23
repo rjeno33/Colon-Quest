@@ -651,24 +651,9 @@ const clearDateButton =
 const plan =
     document.getElementById("plan");
 
-    const medicationSelect =
-    document.getElementById("medicationSelect");
-
-const medicationPathway =
-    document.getElementById("medicationPathway");
-
 const ironSelect =
     document.getElementById("ironSelect");
 
-
-
- /// medication event listener ///
- 
-medicationSelect.addEventListener("change", function () {
-
-    medicationPathway.innerHTML = "";
-
-});
 
 //=============================
 // Get Iron Tasks
