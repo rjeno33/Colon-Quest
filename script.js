@@ -857,52 +857,46 @@ function getPrepTasks(
     appointmentDate
 ) {
 
-    const selectedPrep =
-        prepInstructions[prepSelect.value];
-
     let tasks = [];
 
+    const regimen =
+        activeProfile.currentRegimen;
 
-// =========================
-// Fixed hospital schedules
-// =========================
 
-if (activeProfile.currentRegimen.fixedPrepTimes) {
+    // =========================
+    // Fixed hospital schedules
+    // =========================
 
-    activeProfile.currentRegimen.prepSchedule.forEach(
-        function(prep, index) {
+    if (regimen.fixedPrepTimes) {
 
-            if (prep.dayBefore === dayBefore) {
+        regimen.prepSchedule.forEach(
+            function(prep, index) {
 
-                const doseInstruction =
-                    index === 0
-                        ? selectedPrep.firstDose
-                        : selectedPrep.secondDose;
+                if (prep.dayBefore === dayBefore) {
 
-                tasks.push({
+                    tasks.push({
 
-                    id:
-                        dayId +
-                        "-prep" +
-                        index,
+                        id:
+                            dayId +
+                            "-prep" +
+                            index,
 
-                    text:
-                        prep.time +
-                        " " +
-                        doseInstruction +
-                        ". " +
-                        selectedPrep.eachDose,
+                        text:
+                            prep.time +
+                            " " +
+                            prep.text,
 
-                    type: "prep"
+                        type: "prep"
 
-                });
+                    });
+
+                }
 
             }
+        );
 
-        }
-    );
+    }
 
-}
 
     // =========================
     // Flexible schedules
@@ -914,23 +908,23 @@ if (activeProfile.currentRegimen.fixedPrepTimes) {
 
         if (
             dayBefore ===
-            activeProfile.currentRegimen.firstDoseDay
+            regimen.firstDoseDay
         ) {
 
-tasks.push({
-    id:
-        dayId +
-        "-prep1",
+            tasks.push({
 
-  text:
-    activeProfile.currentRegimen.firstDoseTime +
-    " " +
-    selectedPrep.firstDose +
-    ". " +
-    selectedPrep.eachDose,
+                id:
+                    dayId +
+                    "-prep1",
 
-    type: "prep"
-});
+                text:
+                    regimen.firstDoseTime +
+                    " " +
+                    regimen.firstDoseText,
+
+                type: "prep"
+
+            });
 
         }
 
@@ -943,31 +937,33 @@ tasks.push({
                 new Date(appointmentDate);
 
             secondDose.setHours(
-                appointmentHour - 5,
+                appointmentHour - 5
             );
 
 
-tasks.push({
-    id:
-        dayId +
-        "-prep2",
+            tasks.push({
 
-text:
-    secondDose.toLocaleTimeString(
-        [],
-        {
-            hour: "2-digit",
-            minute: "2-digit"
-        }
-    ) +
-    " " +
-    selectedPrep.secondDose +
-    ". " +
-    selectedPrep.eachDose,
+                id:
+                    dayId +
+                    "-prep2",
 
-    type: "prep"
-});
+                text:
+                    secondDose.toLocaleTimeString(
+                        [],
+                        {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                        }
+                    ) +
+                    " " +
+                    regimen.secondDoseText,
+
+                type: "prep"
+
+            });
+
         }
+
     }
 
     return tasks;
