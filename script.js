@@ -335,6 +335,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -359,6 +360,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -383,6 +385,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -422,6 +425,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -446,6 +450,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -470,6 +475,7 @@ const sheffieldProfile = {
                     waterTasks: false,
                     sennaTasks: false,
                     waterAfterPrep: true,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -511,6 +517,7 @@ const sheffieldProfile = {
                     sennaStartDays: 3,
                     waterAfterPrep: false,
                     dietStartDays: 5,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -542,6 +549,7 @@ const sheffieldProfile = {
                     sennaStartDays: 3,
                     waterAfterPrep: false,
                     dietStartDays: 5,
+                    medications: [],
 
                     prepSchedule: [
 
@@ -573,6 +581,7 @@ const sheffieldProfile = {
                     sennaStartDays: 3,
                     waterAfterPrep: false,
                     dietStartDays: 5,
+                    medications: [],
 
                     prepSchedule: [
 
