@@ -535,17 +535,20 @@ const sheffieldProfile = {
 
                         {
                             dayBefore: 1,
-                            time: "14:00"
+                            time: "14:00",
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         },
 
                         {
                             dayBefore: 1,
-                            time: "17:00"
+                            time: "17:00",
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         },
 
                         {
                             dayBefore: 0,
-                            time: "04:00"
+                            time: "04:00",
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         }
 
                     ]
@@ -567,17 +570,20 @@ const sheffieldProfile = {
 
                         {
                             dayBefore: 1,
-                            time: "17:00"
+                            time: "17:00",
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         },
 
                         {
                             dayBefore: 1,
-                            time: "19:00"
+                            time: "19:00",
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         },
 
                         {
                             dayBefore: 0,
-                            time: "09:00"
+                            time: "09:00",
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         }
 
                     ]
@@ -599,17 +605,21 @@ const sheffieldProfile = {
 
                         {
                             dayBefore: 1,
-                            time: "17:00"
+                            time: "17:00",
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                        
                         },
 
                         {
                             dayBefore: 1,
-                            time: "19:00"
+                            time: "19:00",
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         },
 
                         {
                             dayBefore: 0,
-                            time: "13:00"
+                            time: "13:00",
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
                         }
 
                     ]
