@@ -238,13 +238,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes",
+                            additionalwater: 500
                         },
 
                         {
                             dayBefore: 0,
                             time: "04:00",
-                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes",
+                            additionalwater: 500
                         }
 
                     ]
