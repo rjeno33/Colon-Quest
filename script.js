@@ -204,7 +204,7 @@ const sheffieldProfile = {
     name: "Sheffield",
 
         iron: {
-        stopDaysBefore: 9
+        stopDaysBefore: 7
     },
 
     hospitalSites: [
