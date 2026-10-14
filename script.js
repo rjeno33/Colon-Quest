@@ -203,10 +203,16 @@ const sheffieldProfile = {
 
     name: "Sheffield",
 
+        iron: {
+        stopDaysBefore: 5
+    },
+
     hospitalSites: [
         "Northern General Hospital",
         "Royal Hallamshire Hospital"
     ],
+
+    
 
     bowelPreps: {
 
@@ -717,18 +723,27 @@ const ironSelect =
 // Get Iron Tasks
 //=============================
 
+
 function getIronTasks(day) {
 
     const iron =
         ironSelect.value;
 
     if (iron !== "Yes") {
-
         return [];
-
     }
 
-    if (day === -5) {
+    if (
+        !activeProfile.iron ||
+        !activeProfile.iron.stopDaysBefore
+    ) {
+        return [];
+    }
+
+    const stopDaysBefore =
+        activeProfile.iron.stopDaysBefore;
+
+    if (day === -stopDaysBefore) {
 
         return [
             {
@@ -742,6 +757,7 @@ function getIronTasks(day) {
     return [];
 
 }
+
 
 //==========================
 // Medication Tasks - V3 placeholder
