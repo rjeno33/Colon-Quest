@@ -912,33 +912,51 @@ function getPrepTasks(
 
     if (regimen.fixedPrepTimes) {
 
-        regimen.prepSchedule.forEach(
-            function(prep, index) {
+       ```javascript
+regimen.prepSchedule.forEach(
+    function(prep, index) {
 
-                if (prep.dayBefore === dayBefore) {
+        if (prep.dayBefore === dayBefore) {
 
-                    tasks.push({
+            // Add the bowel preparation task
+            tasks.push({
+                id:
+                    dayId +
+                    "-prep" +
+                    index,
 
-                        id:
-                            dayId +
-                            "-prep" +
-                            index,
+                text:
+                    prep.time +
+                    " " +
+                    prep.text,
 
-                        text:
-                            prep.time +
-                            " " +
-                            prep.text,
+                type: "prep"
+            });
 
-                        type: "prep"
+            // Add a separate water task if configured
+            if (prep.additionalWater) {
 
-                    });
+                tasks.push({
+                    id:
+                        dayId +
+                        "-prep-water" +
+                        index,
 
-                }
+                    text:
+                        "After your bowel preparation, drink an additional " +
+                        prep.additionalWater +
+                        "mls of water",
+
+                    type: "water"
+                });
 
             }
-        );
+
+        }
 
     }
+);
+```
 
 
     // =========================
