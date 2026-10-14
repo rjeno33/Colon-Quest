@@ -910,58 +910,39 @@ function getPrepTasks(
     // Fixed hospital schedules
     // =========================
 
-    if (regimen.fixedPrepTimes) {
+   if (regimen.fixedPrepTimes) {
 
-regimen.prepSchedule.forEach(
-    function(prep, index) {
+    regimen.prepSchedule.forEach(function(prep, index) {
 
         if (prep.dayBefore === dayBefore) {
 
-            // Add the bowel preparation task
             tasks.push({
-                id:
-                    dayId +
-                    "-prep" +
-                    index,
-
-                text:
-                    prep.time +
-                    " " +
-                    prep.text,
-
+                id: dayId + "-prep" + index,
+                text: prep.time + " " + prep.text,
                 type: "prep"
             });
 
-            // Add a separate water task if configured
             if (prep.additionalWater) {
-
                 tasks.push({
-                    id:
-                        dayId +
-                        "-prep-water" +
-                        index,
-
-                    text:
-                        "After your bowel preparation, drink an additional " +
-                        prep.additionalWater +
-                        "mls of water",
-
+                    id: dayId + "-prep-water" + index,
+                    text: "After your bowel preparation, drink an additional " +
+                          prep.additionalWater + "mls of water",
                     type: "water"
                 });
-
             }
 
         }
 
-    }
-);
+    });
 
-    }
+} else {
+
+    
     // =========================
     // Flexible schedules
     // =========================
 
-    else {
+    
 
         // First dose
 
