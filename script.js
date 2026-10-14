@@ -229,7 +229,7 @@ const sheffieldProfile = {
                 am: {
 
                     fixedPrepTimes: true,
-                    dietStartDays: 2,
+                    dietStartDays: null,
 
                     medications: [
                     ],
@@ -262,7 +262,7 @@ const sheffieldProfile = {
                 pm: {
 
                     fixedPrepTimes: true,
-                    dietStartDays: 0,
+                    dietStartDays: null,
 
                     medications: [
                     ],
