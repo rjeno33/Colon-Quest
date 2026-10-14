@@ -912,7 +912,6 @@ function getPrepTasks(
 
     if (regimen.fixedPrepTimes) {
 
-       ```javascript
 regimen.prepSchedule.forEach(
     function(prep, index) {
 
@@ -956,7 +955,6 @@ regimen.prepSchedule.forEach(
 
     }
 );
-```
 
 
     // =========================
