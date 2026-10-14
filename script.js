@@ -271,13 +271,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "08:00",
-                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -302,13 +304,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 0,
                             time: "07:00",
-                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose of Plenvu over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "11:00",
-                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes"
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose of Plenvu over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -344,13 +348,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "04:00",
-                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -371,13 +377,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "08:00",
-                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -398,13 +406,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 0,
                             time: "07:00",
-                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix first dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "12:00",
-                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes"
+                            text: "Mix second dose of Moviprep with 1L of water and drink this over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -440,13 +450,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "17:00",
-                            text: "Mix your first dose of picolax with 150mls of water and drink this."
+                            text: "Mix your first dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         },
 
                         {
                             dayBefore: 0,
                             time: "03:00",
-                            text: "Mix your second dose of picolax with 150mls of water and drink this."
+                            text: "Mix your second dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         }
 
                     ]
@@ -467,13 +479,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix your first dose of picolax with 150mls of water and drink this."
+                            text: "Mix your first dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         },
 
                         {
                             dayBefore: 0,
                             time: "08:00",
-                            text: "Mix your second dose of picolax with 150mls of water and drink this."
+                            text: "Mix your second dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         }
 
                     ]
@@ -494,13 +508,15 @@ const sheffieldProfile = {
                         {
                             dayBefore: 0,
                             time: "06:00",
-                            text: "Mix your first dose of picolax with 150mls of water and drink this."
+                            text: "Mix your first dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         },
 
                         {
                             dayBefore: 0,
                             time: "11:30",
-                            text: "Mix your second dose of picolax with 150mls of water and drink this."
+                            text: "Mix your second dose of picolax with 150mls of water and drink this.",
+                            additionalWater:1000
                         }
 
                     ]
@@ -538,19 +554,22 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "14:00",
-                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 1,
                             time: "17:00",
-                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "04:00",
-                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -573,19 +592,22 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "17:00",
-                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "09:00",
-                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
@@ -608,20 +630,23 @@ const sheffieldProfile = {
                         {
                             dayBefore: 1,
                             time: "17:00",
-                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your first dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         
                         },
 
                         {
                             dayBefore: 1,
                             time: "19:00",
-                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your second dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         },
 
                         {
                             dayBefore: 0,
                             time: "13:00",
-                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes"
+                            text: "Mix your third dose of Moviprep with 1L of water and drink over the next 60 minutes",
+                            additionalWater:500
                         }
 
                     ]
