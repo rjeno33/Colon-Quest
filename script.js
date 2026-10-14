@@ -1170,30 +1170,30 @@ tasks.push(...medicationTasks);
 
     }
 
-
+    
     // =========================
-    // Diet
-    // =========================
+// Diet
+// =========================
 
-    if (
-        day <=
-        activeProfile.currentRegimen.dietStartDays
-    ) {
+if (
+    activeProfile.currentRegimen.dietStartDays != null &&
+    day <= activeProfile.currentRegimen.dietStartDays
+) {
 
-        tasks.push({
+    tasks.push({
 
-            id:
-                dayId +
-                "-diet",
+        id:
+            dayId +
+            "-diet",
 
-            text:
-                "Follow a low residue diet",
+        text:
+            "Follow a low residue diet",
 
-            type: "diet"
+        type: "diet"
 
-        });
+    });
 
-    }
+}
 
 
     if (tasks.length === 0) {
