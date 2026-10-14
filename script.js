@@ -956,7 +956,7 @@ regimen.prepSchedule.forEach(
     }
 );
 
-
+    }
     // =========================
     // Flexible schedules
     // =========================
