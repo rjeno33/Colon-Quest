@@ -203,6 +203,9 @@ const sheffieldProfile = {
 
     name: "Sheffield",
 
+    minAppointmentTime: "08:00",
+maxAppointmentTime: "21:00",
+
         iron: {
         stopDaysBefore: 7
     },
@@ -1674,6 +1677,41 @@ function createPlan() {
 
     const appointmentHour =
         appointment.getHours();
+
+    const appointmentTime =
+    appointment.getHours() * 60 +
+    appointment.getMinutes();
+
+const minTime =
+    Number(
+        activeProfile.minAppointmentTime.split(":")[0]
+    ) * 60 +
+    Number(
+        activeProfile.minAppointmentTime.split(":")[1]
+    );
+
+const maxTime =
+    Number(
+        activeProfile.maxAppointmentTime.split(":")[0]
+    ) * 60 +
+    Number(
+        activeProfile.maxAppointmentTime.split(":")[1]
+    );
+
+if (
+    appointmentTime < minTime ||
+    appointmentTime > maxTime
+) {
+    alert(
+        "This appointment time is outside the permitted window for this care provider. Please select a time between " +
+        activeProfile.minAppointmentTime +
+        " and " +
+        activeProfile.maxAppointmentTime +
+        "."
+    );
+
+    return;
+}
 
 
 
