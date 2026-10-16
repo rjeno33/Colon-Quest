@@ -1302,19 +1302,26 @@ tasks.push(...medicationTasks);
         appointmentHour < 17
     ) {
 
-        tasks.push({
+if (
+    activeProfile.currentRegimen.dietStartDays != null
+) {
 
-            id:
-                dayId +
-                "-diet",
+    tasks.push({
 
-            text:
-                "Low residue diet until " +
-                activeProfile.currentRegimen.fastingTime,
+        id:
+            dayId +
+            "-diet",
 
-            type: "diet"
+        text:
+            "Low residue diet until " +
+            activeProfile.currentRegimen.fastingTime,
 
-        });
+        type: "diet"
+
+    });
+
+}
+
 
 
         tasks.push({
