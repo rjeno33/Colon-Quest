@@ -821,7 +821,8 @@ const prepInstructions = {
 const prepNames = {
     plenvu: "Plenvu",
     moviprep: "Moviprep",
-    picolax: "Picolax"
+    picolax: "Picolax",
+    extended: "Extended prep – 6 sachets Moviprep"
 };
 
 // =========================
