@@ -1644,13 +1644,7 @@ function createPlanSummary(
     ${prepNames[prepSelect.value]}
 </p>
 
-            <p>
-                <strong>Plan starts:</strong>
-                ${new Date(
-                    appointment.getTime() -
-                    (7 * 24 * 60 * 60 * 1000)
-                ).toLocaleDateString()}
-            </p>
+
 
             <small>
                 Please follow your hospital's instructions.
