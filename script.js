@@ -1172,6 +1172,7 @@ function addTaskList(tasks) {
 
 
 
+
  // =========================
  // Get Prep Tasks
  // =========================
@@ -1187,126 +1188,33 @@ function getPrepTasks(
 
     const regimen = activeProfile.currentRegimen;
 
+    // Stop safely if this regimen has no prep schedule
+    if (!regimen || !Array.isArray(regimen.prepSchedule)) {
+        return tasks;
+    }
 
-    // =========================
-    // Fixed hospital schedules
-    // Also supports calculated times
-    // =========================
+    // Process the new prepSchedule format
+    regimen.prepSchedule.forEach(function(prep, index) {
 
-    if (regimen.fixedPrepTimes) {
-
-        regimen.prepSchedule.forEach(function(prep, index) {
-
-            if (prep.dayBefore === dayBefore) {
-
-                let prepTime;
-
-                // NEW: Is this a calculated time?
-                if (
-                    typeof prep.time === "object" &&
-                    prep.time !== null &&
-                    prep.time.hoursBeforeAppointment !== undefined
-                ) {
-
-                    const appointment = new Date(appointmentDate);
-
-                    // Support either "16:30", or a numeric hour
-                    let appointmentHours;
-                    let appointmentMinutes = 0;
-
-                    if (typeof appointmentHour === "string") {
-
-                        const parts = appointmentHour.split(":");
-
-                        appointmentHours = Number(parts[0]);
-                        appointmentMinutes = Number(parts[1] || 0);
-
-                    } else {
-
-                        appointmentHours = Number(appointmentHour);
-
-                    }
-
-                    appointment.setHours(
-                        appointmentHours,
-                        appointmentMinutes,
-                        0,
-                        0
-                    );
-
-                    // Calculate the dose time
-                    appointment.setTime(
-                        appointment.getTime() -
-                        prep.time.hoursBeforeAppointment * 60 * 60 * 1000
-                    );
-
-                    prepTime = appointment.toLocaleTimeString(
-                        [],
-                        {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                            hour12: false
-                        }
-                    );
-
-                } else {
-
-                    // Existing fixed time, e.g. "19:00"
-                    prepTime = prep.time;
-
-                }
-
-
-                tasks.push({
-                    id: dayId + "-prep" + index,
-                    text: prepTime + " " + prep.text,
-                    type: "prep"
-                });
-
-
-                // Additional water task
-                if (prep.additionalWater) {
-
-                    tasks.push({
-                        id: dayId + "-prep-water" + index,
-                        text: "After your bowel preparation, drink an additional " +
-                              prep.additionalWater + "mls of water",
-                        type: "water"
-                    });
-
-                }
-
-            }
-
-        });
-
-    } else {
-
-        // =========================
-        // Existing flexible schedules
-        // Kept for backwards compatibility
-        // =========================
-
-        // First dose
-        if (dayBefore === regimen.firstDoseDay) {
-
-            tasks.push({
-                id: dayId + "-prep1",
-                text: regimen.firstDoseTime + " " + regimen.firstDoseText,
-                type: "prep"
-            });
-
+        if (prep.dayBefore !== dayBefore) {
+            return;
         }
 
+        let prepTime;
 
-        // Second dose
-        if (dayBefore === 0) {
+        // Calculate the time relative to the appointment
+        if (
+            typeof prep.time === "object" &&
+            prep.time !== null &&
+            prep.time.hoursBeforeAppointment !== undefined
+        ) {
 
-            const secondDose = new Date(appointmentDate);
+            const appointment = new Date(appointmentDate);
 
             let appointmentHours;
             let appointmentMinutes = 0;
 
+            // Accept either "16:30" or a numeric hour
             if (typeof appointmentHour === "string") {
 
                 const parts = appointmentHour.split(":");
@@ -1320,37 +1228,60 @@ function getPrepTasks(
 
             }
 
-            secondDose.setHours(
+            // Set the full appointment time before calculating backwards
+            appointment.setHours(
                 appointmentHours,
                 appointmentMinutes,
                 0,
                 0
             );
 
-            secondDose.setTime(
-                secondDose.getTime() - 5 * 60 * 60 * 1000
+            appointment.setTime(
+                appointment.getTime() -
+                prep.time.hoursBeforeAppointment * 60 * 60 * 1000
             );
 
+            prepTime = appointment.toLocaleTimeString(
+                [],
+                {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false
+                }
+            );
+
+        } else {
+
+            // Use a fixed time, e.g. "19:00"
+            prepTime = prep.time;
+
+        }
+
+        // Add the preparation task
+        tasks.push({
+            id: dayId + "-prep" + index,
+            text: prepTime + " " + prep.text,
+            type: "prep"
+        });
+
+        // Add an additional water task, if configured
+        if (prep.additionalWater) {
+
             tasks.push({
-                id: dayId + "-prep2",
-                text: secondDose.toLocaleTimeString(
-                    [],
-                    {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                        hour12: false
-                    }
-                ) + " " + regimen.secondDoseText,
-                type: "prep"
+                id: dayId + "-prep-water" + index,
+                text: "After your bowel preparation, drink an additional " +
+                      prep.additionalWater + "mls of water",
+                type: "water"
             });
 
         }
 
-    }
+    });
 
     return tasks;
 
 }
+
 
 
 // =========================
