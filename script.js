@@ -2557,6 +2557,7 @@ profileSelect.addEventListener(
 
 
         populateSites();
+        populatePreps();
 
 
         // Clear any existing plan
