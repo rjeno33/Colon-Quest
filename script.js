@@ -121,6 +121,9 @@ const testFixedProfile = {
 const testFlexibleProfile = {
     name: "TEST - Flexible Times",
 
+        minAppointmentTime: "08:00",
+    maxAppointmentTime: "21:00",
+
     hospitalSites: ["Test Hospital - Flexible"],
 
     bowelPreps: {
