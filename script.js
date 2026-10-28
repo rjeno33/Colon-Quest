@@ -117,82 +117,123 @@ const testFixedProfile = {
 // TEST FLEXIBLE PROFILE
 // ========================
 
+
 const testFlexibleProfile = {
-
     name: "TEST - Flexible Times",
+    hospitalSites: ["Test Hospital - Flexible Times"],
 
-    hospitalSites: [
-        "Test Hospital - Flexible Times"
-    ],
+    bowelPreps: {
 
-    regimens: {
+        moviprep: {
+            name: "Moviprep",
 
-        am: {
+            regimens: {
+                am: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "14:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 1,
+                    firstDoseTime: "19:00"
+                },
 
-            fixedPrepTimes: false,
-            dietStartDays: 3,
-            sennaStartDays: 4,
-            waterStartDays: 2,
-            fastingTime: "14:30",
+                pm: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "16:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 1,
+                    firstDoseTime: "19:00"
+                },
 
-            medications: [
-            ],
-
-            waterTasks: true,
-            sennaTasks: true,
-            waterAfterPrep: true,
-            fastingHoursBefore: 2,
-            prepDoses: 2,
-            firstDoseDay: 1,
-            firstDoseTime: "18:15"
-
+                evening: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "20:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 0,
+                    firstDoseTime: "08:00"
+                }
+            }
         },
 
-        pm: {
+        plenvu: {
+            name: "Plenvu",
 
-            fixedPrepTimes: false,
-            dietStartDays: 3,
-            sennaStartDays: 4,
-            waterStartDays: 2,
-            fastingTime: "16:30",
+            regimens: {
+                am: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "14:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 1,
+                    firstDoseTime: "19:00"
+                },
 
-            medications: [
-            ],
+                pm: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "16:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 1,
+                    firstDoseTime: "19:00"
+                },
 
-            waterTasks: true,
-            sennaTasks: true,
-            waterAfterPrep: true,
-            fastingHoursBefore: 2,
-            prepDoses: 2,
-            firstDoseDay: 1,
-            firstDoseTime: "20:15"
-
-        },
-
-        evening: {
-
-            fixedPrepTimes: false,
-            dietStartDays: 3,
-            sennaStartDays: 4,
-            waterStartDays: 2,
-            fastingTime: "20:30",
-
-            medications: [
-            ],
-
-            waterTasks: true,
-            sennaTasks: true,
-            waterAfterPrep: true,
-            fastingHoursBefore: 2,
-            prepDoses: 2,
-            firstDoseDay: 0,
-            firstDoseTime: "08:15"
-
+                evening: {
+                    fixedPrepTimes: false,
+                    dietStartDays: 3,
+                    sennaStartDays: 4,
+                    waterStartDays: 2,
+                    fastingTime: "20:30",
+                    medications: [],
+                    waterTasks: true,
+                    sennaTasks: true,
+                    waterAfterPrep: true,
+                    fastingHoursBefore: 2,
+                    prepDoses: 2,
+                    firstDoseDay: 0,
+                    firstDoseTime: "08:00"
+                }
+            }
         }
-
     }
-
 };
+
 
 
 // =========================
