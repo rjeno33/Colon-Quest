@@ -1459,7 +1459,8 @@ if (
 
 function addDayBefore(
     date,
-    appointmentHour
+    appointmentHour,
+    appointmentTimeString
 ) {
 
     const dayId =
@@ -1566,7 +1567,7 @@ if (
             ...getPrepTasks(
                 dayId,
                 1,
-                appointmentHour,
+                appointmentTimeString,
                 date
             )
         );
@@ -1658,7 +1659,7 @@ if (
             ...getPrepTasks(
                 dayId,
                 1,
-                appointmentHour,
+                appointmentTimeString,
                 date
             )
         );
@@ -1699,7 +1700,8 @@ if (
 
 function addAppointmentDay(
     date,
-    appointmentHour
+    appointmentHour,
+    appointmentTimeString
 ) {
 
     const dayId =
@@ -1734,7 +1736,7 @@ arrivalTime.setMinutes(
         getPrepTasks(
             dayId,
             0,
-            appointmentHour,
+            appointmentTimeString,
             date
         );
 
@@ -2033,7 +2035,9 @@ console.log("Current regimen:", activeProfile.currentRegimen);
 
             addDayBefore(
                 currentDate,
-                appointmentHour
+                appointmentHour,
+                appointmentTimeString
+            
             );
 
         }
@@ -2042,7 +2046,8 @@ console.log("Current regimen:", activeProfile.currentRegimen);
 
             addAppointmentDay(
                 currentDate,
-                appointmentHour
+                appointmentHour,
+                appointmentTimeString
             );
 
         }
