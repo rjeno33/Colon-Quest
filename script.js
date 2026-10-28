@@ -1173,6 +1173,7 @@ function addTaskList(tasks) {
 
 
 
+ 
  // =========================
  // Get Prep Tasks
  // =========================
@@ -1180,7 +1181,7 @@ function addTaskList(tasks) {
 function getPrepTasks(
     dayId,
     dayBefore,
-    appointmentHour,
+    appointmentTimeString,
     appointmentDate
 ) {
 
@@ -1193,7 +1194,7 @@ function getPrepTasks(
         return tasks;
     }
 
-    // Process the new prepSchedule format
+    // Process the prep schedule
     regimen.prepSchedule.forEach(function(prep, index) {
 
         if (prep.dayBefore !== dayBefore) {
@@ -1202,7 +1203,7 @@ function getPrepTasks(
 
         let prepTime;
 
-        // Calculate the time relative to the appointment
+        // Calculate time relative to the appointment
         if (
             typeof prep.time === "object" &&
             prep.time !== null &&
@@ -1211,24 +1212,12 @@ function getPrepTasks(
 
             const appointment = new Date(appointmentDate);
 
-            let appointmentHours;
-            let appointmentMinutes = 0;
+            const parts = appointmentTimeString.split(":");
 
-            // Accept either "16:30" or a numeric hour
-            if (typeof appointmentHour === "string") {
+            const appointmentHours = Number(parts[0]);
+            const appointmentMinutes = Number(parts[1]);
 
-                const parts = appointmentHour.split(":");
-
-                appointmentHours = Number(parts[0]);
-                appointmentMinutes = Number(parts[1] || 0);
-
-            } else {
-
-                appointmentHours = Number(appointmentHour);
-
-            }
-
-            // Set the full appointment time before calculating backwards
+            // Set the exact appointment time, including minutes
             appointment.setHours(
                 appointmentHours,
                 appointmentMinutes,
@@ -1236,6 +1225,7 @@ function getPrepTasks(
                 0
             );
 
+            // Calculate the prep time
             appointment.setTime(
                 appointment.getTime() -
                 prep.time.hoursBeforeAppointment * 60 * 60 * 1000
