@@ -120,7 +120,8 @@ const testFixedProfile = {
 
 const testFlexibleProfile = {
     name: "TEST - Flexible Times",
-    hospitalSites: ["Test Hospital - Flexible Times"],
+
+    hospitalSites: ["Test Hospital - Flexible"],
 
     bowelPreps: {
 
@@ -129,51 +130,84 @@ const testFlexibleProfile = {
 
             regimens: {
                 am: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "14:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 1,
-                    firstDoseTime: "19:00"
+                    fastingTime: "14:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 1,
+                            time: "19:00",
+                            text: "Mix Dose 1 of Moviprep as instructed in your approved preparation booklet and drink your first dose as directed",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Moviprep as instructed in your approved preparation booklet and drink your second dose as directed",
+                            additionalWater: 500
+                        }
+                    ]
                 },
 
                 pm: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "16:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 1,
-                    firstDoseTime: "19:00"
+                    fastingTime: "16:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 1,
+                            time: "19:00",
+                            text: "Mix Dose 1 of Moviprep as instructed in your approved preparation booklet and drink your first dose as directed",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Moviprep as instructed in your approved preparation booklet and drink your second dose as directed",
+                            additionalWater: 500
+                        }
+                    ]
                 },
 
                 evening: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "20:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 0,
-                    firstDoseTime: "08:00"
+                    fastingTime: "20:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 0,
+                            time: "08:00",
+                            text: "Mix Dose 1 of Moviprep as instructed in your approved preparation booklet and drink your first dose as directed",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Moviprep as instructed in your approved preparation booklet and drink your second dose as directed",
+                            additionalWater: 500
+                        }
+                    ]
                 }
             }
         },
@@ -183,56 +217,90 @@ const testFlexibleProfile = {
 
             regimens: {
                 am: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "14:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 1,
-                    firstDoseTime: "19:00"
+                    fastingTime: "14:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 1,
+                            time: "19:00",
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose over the next 60 minutes",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose over the next 60 minutes",
+                            additionalWater: 500
+                        }
+                    ]
                 },
 
                 pm: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "16:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 1,
-                    firstDoseTime: "19:00"
+                    fastingTime: "16:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 1,
+                            time: "19:00",
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose over the next 60 minutes",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose over the next 60 minutes",
+                            additionalWater: 500
+                        }
+                    ]
                 },
 
                 evening: {
-                    fixedPrepTimes: false,
+                    fixedPrepTimes: true,
                     dietStartDays: 3,
-                    sennaStartDays: 4,
-                    waterStartDays: 2,
-                    fastingTime: "20:30",
                     medications: [],
-                    waterTasks: true,
-                    sennaTasks: true,
+                    waterTasks: false,
+                    sennaTasks: false,
                     waterAfterPrep: true,
-                    fastingHoursBefore: 2,
-                    prepDoses: 2,
-                    firstDoseDay: 0,
-                    firstDoseTime: "08:00"
+                    fastingTime: "20:30",
+
+                    prepSchedule: [
+                        {
+                            dayBefore: 0,
+                            time: "08:00",
+                            text: "Mix Dose 1 of Plenvu with 500mls of water and drink your first dose over the next 60 minutes",
+                            additionalWater: 500
+                        },
+                        {
+                            dayBefore: 0,
+                            time: {
+                                hoursBeforeAppointment: 5
+                            },
+                            text: "Mix Dose 2 of Plenvu with 500mls of water and drink your second dose over the next 60 minutes",
+                            additionalWater: 500
+                        }
+                    ]
                 }
             }
         }
     }
 };
+
 
 
 
