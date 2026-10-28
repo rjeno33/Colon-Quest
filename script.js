@@ -1899,12 +1899,19 @@ function createPlan() {
         );
 
 
-    const appointmentHour =
-        appointment.getHours();
 
-    const appointmentTime =
+const appointmentHour =
+    appointment.getHours();
+
+const appointmentTime =
     appointment.getHours() * 60 +
     appointment.getMinutes();
+
+const appointmentTimeString =
+    appointment.getHours().toString().padStart(2, "0") +
+    ":" +
+    appointment.getMinutes().toString().padStart(2, "0");
+
 
 const minTime =
     Number(
