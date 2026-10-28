@@ -1064,10 +1064,10 @@ function addTaskList(tasks) {
 }
 
 
-// =========================
-// Get Prep Tasks
-// =========================
 
+ // =========================
+ // Get Prep Tasks
+ // =========================
 
 function getPrepTasks(
     dayId,
@@ -1078,104 +1078,163 @@ function getPrepTasks(
 
     let tasks = [];
 
-    const regimen =
-        activeProfile.currentRegimen;
+    const regimen = activeProfile.currentRegimen;
 
 
     // =========================
     // Fixed hospital schedules
+    // Also supports calculated times
     // =========================
 
-   if (regimen.fixedPrepTimes) {
+    if (regimen.fixedPrepTimes) {
 
-    regimen.prepSchedule.forEach(function(prep, index) {
+        regimen.prepSchedule.forEach(function(prep, index) {
 
-        if (prep.dayBefore === dayBefore) {
+            if (prep.dayBefore === dayBefore) {
 
-            tasks.push({
-                id: dayId + "-prep" + index,
-                text: prep.time + " " + prep.text,
-                type: "prep"
-            });
+                let prepTime;
 
-            if (prep.additionalWater) {
+                // NEW: Is this a calculated time?
+                if (
+                    typeof prep.time === "object" &&
+                    prep.time !== null &&
+                    prep.time.hoursBeforeAppointment !== undefined
+                ) {
+
+                    const appointment = new Date(appointmentDate);
+
+                    // Support either "16:30", or a numeric hour
+                    let appointmentHours;
+                    let appointmentMinutes = 0;
+
+                    if (typeof appointmentHour === "string") {
+
+                        const parts = appointmentHour.split(":");
+
+                        appointmentHours = Number(parts[0]);
+                        appointmentMinutes = Number(parts[1] || 0);
+
+                    } else {
+
+                        appointmentHours = Number(appointmentHour);
+
+                    }
+
+                    appointment.setHours(
+                        appointmentHours,
+                        appointmentMinutes,
+                        0,
+                        0
+                    );
+
+                    // Calculate the dose time
+                    appointment.setTime(
+                        appointment.getTime() -
+                        prep.time.hoursBeforeAppointment * 60 * 60 * 1000
+                    );
+
+                    prepTime = appointment.toLocaleTimeString(
+                        [],
+                        {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                            hour12: false
+                        }
+                    );
+
+                } else {
+
+                    // Existing fixed time, e.g. "19:00"
+                    prepTime = prep.time;
+
+                }
+
+
                 tasks.push({
-                    id: dayId + "-prep-water" + index,
-                    text: "After your bowel preparation, drink an additional " +
-                          prep.additionalWater + "mls of water",
-                    type: "water"
+                    id: dayId + "-prep" + index,
+                    text: prepTime + " " + prep.text,
+                    type: "prep"
                 });
+
+
+                // Additional water task
+                if (prep.additionalWater) {
+
+                    tasks.push({
+                        id: dayId + "-prep-water" + index,
+                        text: "After your bowel preparation, drink an additional " +
+                              prep.additionalWater + "mls of water",
+                        type: "water"
+                    });
+
+                }
+
             }
 
-        }
+        });
 
-    });
+    } else {
 
-} else {
-
-    
-    // =========================
-    // Flexible schedules
-    // =========================
-
-    
+        // =========================
+        // Existing flexible schedules
+        // Kept for backwards compatibility
+        // =========================
 
         // First dose
-
-        if (
-            dayBefore ===
-            regimen.firstDoseDay
-        ) {
+        if (dayBefore === regimen.firstDoseDay) {
 
             tasks.push({
-
-                id:
-                    dayId +
-                    "-prep1",
-
-                text:
-                    regimen.firstDoseTime +
-                    " " +
-                    regimen.firstDoseText,
-
+                id: dayId + "-prep1",
+                text: regimen.firstDoseTime + " " + regimen.firstDoseText,
                 type: "prep"
-
             });
 
         }
 
 
         // Second dose
-
         if (dayBefore === 0) {
 
-            const secondDose =
-                new Date(appointmentDate);
+            const secondDose = new Date(appointmentDate);
+
+            let appointmentHours;
+            let appointmentMinutes = 0;
+
+            if (typeof appointmentHour === "string") {
+
+                const parts = appointmentHour.split(":");
+
+                appointmentHours = Number(parts[0]);
+                appointmentMinutes = Number(parts[1] || 0);
+
+            } else {
+
+                appointmentHours = Number(appointmentHour);
+
+            }
 
             secondDose.setHours(
-                appointmentHour - 5
+                appointmentHours,
+                appointmentMinutes,
+                0,
+                0
             );
 
+            secondDose.setTime(
+                secondDose.getTime() - 5 * 60 * 60 * 1000
+            );
 
             tasks.push({
-
-                id:
-                    dayId +
-                    "-prep2",
-
-                text:
-                    secondDose.toLocaleTimeString(
-                        [],
-                        {
-                            hour: "2-digit",
-                            minute: "2-digit"
-                        }
-                    ) +
-                    " " +
-                    regimen.secondDoseText,
-
+                id: dayId + "-prep2",
+                text: secondDose.toLocaleTimeString(
+                    [],
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false
+                    }
+                ) + " " + regimen.secondDoseText,
                 type: "prep"
-
             });
 
         }
@@ -1185,6 +1244,7 @@ function getPrepTasks(
     return tasks;
 
 }
+
 
 // =========================
 // Standard Day
