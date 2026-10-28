@@ -1067,6 +1067,42 @@ function populateSites() {
 
 }
 
+
+function populatePreps() {
+
+    // Clear the existing preparation options
+    prepSelect.innerHTML = "";
+
+    // Add the placeholder option
+    const placeholder = document.createElement("option");
+
+    placeholder.value = "";
+    placeholder.textContent = "-- Select bowel preparation --";
+
+    prepSelect.appendChild(placeholder);
+
+    // Stop if no care provider is selected
+    if (!activeProfile) {
+        return;
+    }
+
+    // Add only the preparations in this profile
+    Object.keys(activeProfile.bowelPreps).forEach(function(prepKey) {
+
+        const prep = activeProfile.bowelPreps[prepKey];
+
+        const option = document.createElement("option");
+
+        option.value = prepKey;
+        option.textContent = prep.name;
+
+        prepSelect.appendChild(option);
+
+    });
+
+}
+
+
 // =========================
 // Add Task
 // =========================
