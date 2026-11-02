@@ -137,8 +137,8 @@ const testFlexibleProfile = {
                     dietStartDays: 3,
                     medications: [],
                     waterTasks: false,
-                    sennaTasks: true,
                     sennaStartDays: 3,
+                     sennaTasks: true,
                     waterAfterPrep: true,
                     fastingTime: "14:30",
 
@@ -165,8 +165,8 @@ const testFlexibleProfile = {
                     dietStartDays: 3,
                     medications: [],
                     waterTasks: false,
-                    sennaTasks: true,
                     sennaStartDays: 3,
+                     sennaTasks: true,
                     waterAfterPrep: true,
                     fastingTime: "16:30",
 
@@ -226,7 +226,8 @@ const testFlexibleProfile = {
                     dietStartDays: 3,
                     medications: [],
                     waterTasks: false,
-                    sennaTasks: false,
+                    sennaTasks: true,
+                    sennaStartDays: 3,
                     waterAfterPrep: true,
                     fastingTime: "14:30",
 
@@ -253,7 +254,8 @@ const testFlexibleProfile = {
                     dietStartDays: 3,
                     medications: [],
                     waterTasks: false,
-                    sennaTasks: false,
+                    sennaTasks: true,
+                    sennaStartDays: 3,
                     waterAfterPrep: true,
                     fastingTime: "16:30",
 
@@ -280,7 +282,8 @@ const testFlexibleProfile = {
                     dietStartDays: 3,
                     medications: [],
                     waterTasks: false,
-                    sennaTasks: false,
+                    sennaTasks: true,
+                    sennaStartDays: 3,
                     waterAfterPrep: true,
                     fastingTime: "20:30",
 
