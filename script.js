@@ -981,7 +981,7 @@ function addLowResidueDiet(profile) {
 
     html += "<h3>When should I follow this diet?</h3>";
 
-    html += "<p>We recommend that you eat a low residue diet for the 2 days before taking your bowel preparation. In some cases you may be instructed to eat a low residue diet for longer.</p>";
+    html += "<p>Please follow the Low Residue Diet for the days instructed on page 1 of your colonoscopy preparation plan</p>";
 
     html += "</div>";
 
