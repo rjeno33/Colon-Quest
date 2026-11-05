@@ -306,6 +306,11 @@ select:focus {
     margin-bottom: 16px;
 }
 
+
+/* ==============================
+   PATIENT SUPPORT - PRINT
+   ============================== */
+
 @media print {
     .patientSupport {
         break-inside: avoid;
@@ -319,9 +324,9 @@ select:focus {
 }
 
 
-
 /* ==============================
    LOW RESIDUE DIET PAGE
+   WEBSITE STYLING
    ============================== */
 
 .lowResidueDietPage {
@@ -388,6 +393,11 @@ select:focus {
     margin: 18px 0 8px 0;
 }
 
+
+/* ==============================
+   DIET TABLE - WEBSITE
+   ============================== */
+
 .dietTable {
     width: 100%;
     border-collapse: collapse;
@@ -441,16 +451,29 @@ select:focus {
 
 
 /* ==============================
-   PRINT SETTINGS
+   LOW RESIDUE DIET - PRINT
    ============================== */
 
-.dietPrintPage {
-    display: block;
-    break-before: page !important;
-    page-break-before: always !important;
-    break-inside: auto;
-    page-break-inside: auto;
-}
+@media print {
+
+    .dietPrintPage {
+        display: block !important;
+        break-before: page !important;
+        page-break-before: always !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .lowResidueDietPage {
+        margin: 0 !important;
+        padding: 5px !important;
+        width: 100% !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
 
     /* Strong, visible table grid */
 
@@ -484,8 +507,6 @@ select:focus {
         font-weight: bold;
     }
 
-    /* Keep individual food groups together */
-
     .dietTable tbody tr {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
@@ -498,22 +519,11 @@ select:focus {
         page-break-inside: avoid;
     }
 
-    /* Preserve colours in print */
-
     .dietHeader,
     .dietTable th,
     .dietTable td,
     .dietFooter {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
-    }
-}
-
-/* Keep the low residue diet on a new printed page */
-@media print {
-    #lowResidueDietPage {
-        display: block !important;
-        break-before: page !important;
-        page-break-before: always !important;
     }
 }
