@@ -317,3 +317,222 @@ select:focus {
         color: #000000;
     }
 }
+
+
+/* ==============================
+   LOW RESIDUE DIET PAGE
+   ============================== */
+
+.lowResidueDietPage {
+
+    background: white;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border: 1px solid #41B6E6;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    color: #222;
+
+    box-sizing: border-box;
+
+}
+
+.dietHeader {
+
+    text-align: center;
+
+    border-bottom: 3px solid #41B6E6;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.dietHeader h1 {
+
+    color: darkblue;
+
+    margin-bottom: 5px;
+
+}
+
+.dietHeader h2 {
+
+    color: #003087;
+
+    margin-bottom: 5px;
+
+}
+
+.dietHeader p {
+
+    margin: 5px 0;
+
+}
+
+.dietIntroduction,
+.dietReminder {
+
+    padding: 12px 15px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #41B6E6;
+
+    border-radius: 8px;
+
+    line-height: 1.5;
+
+}
+
+.dietIntroduction h3,
+.dietReminder h3 {
+
+    color: #003087;
+
+    margin-top: 0;
+
+}
+
+.dietTableHeading {
+
+    color: #003087;
+
+    margin-top: 20px;
+
+}
+
+.dietTable {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 13px;
+
+    text-align: left;
+
+}
+
+.dietTable th,
+.dietTable td {
+
+    border: 1px solid #999;
+
+    padding: 8px;
+
+    vertical-align: top;
+
+    overflow-wrap: break-word;
+
+    line-height: 1.4;
+
+}
+
+.dietTable th {
+
+    background: #EAF8FD;
+
+    color: #003087;
+
+}
+
+.dietTable th:first-child {
+
+    width: 20%;
+
+}
+
+.dietTable th:nth-child(2),
+.dietTable th:nth-child(3) {
+
+    width: 40%;
+
+}
+
+.dietFooter {
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    background: #EAF8FD;
+
+    border-left: 4px solid #41B6E6;
+
+    line-height: 1.5;
+
+}
+
+.dietFooter strong {
+
+    color: #003087;
+
+}
+
+
+/* ==============================
+   PRINT SETTINGS
+   ============================== */
+
+@media print {
+
+    .lowResidueDietPage {
+
+        break-before: page;
+
+        page-break-before: always;
+
+        border: none;
+
+        border-radius: 0;
+
+        margin: 0;
+
+        padding: 10px;
+
+        width: 100%;
+
+        box-shadow: none;
+
+    }
+
+    .dietHeader h1 {
+
+        color: #003087;
+
+    }
+
+    .dietTable {
+
+        font-size: 11px;
+
+    }
+
+    .dietTable th,
+    .dietTable td {
+
+        padding: 6px;
+
+    }
+
+    .dietIntroduction,
+    .dietReminder,
+    .dietFooter {
+
+        break-inside: avoid;
+
+        page-break-inside: avoid;
+
+    }
+
+}
