@@ -536,3 +536,171 @@ select:focus {
     }
 
 }
+
+////new code///
+
+/* ==============================
+   LOW RESIDUE DIET - IMPROVED LAYOUT
+   ============================== */
+
+.lowResidueDietPage {
+    background: #ffffff;
+    margin-top: 30px;
+    padding: 22px;
+    border: 2px solid #003087;
+    border-radius: 4px;
+    text-align: left;
+    color: #222;
+    box-sizing: border-box;
+}
+
+/* Main heading */
+
+.dietHeader {
+    text-align: center;
+    background: #EAF8FD;
+    border-bottom: 3px solid #003087;
+    padding: 14px;
+    margin-bottom: 18px;
+}
+
+.dietHeader h1 {
+    color: #003087;
+    font-size: 26px;
+    margin: 0 0 4px 0;
+}
+
+.dietHeader h2 {
+    color: #003087;
+    font-size: 22px;
+    margin: 12px 0 4px 0;
+}
+
+.dietHeader p {
+    margin: 4px 0;
+}
+
+/* Information sections */
+
+.dietIntroduction,
+.dietReminder {
+    background: #ffffff;
+    border: 1px solid #003087;
+    border-radius: 3px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.dietIntroduction h3,
+.dietReminder h3 {
+    color: #003087;
+    margin: 0 0 6px 0;
+    font-size: 15px;
+}
+
+.dietIntroduction p,
+.dietReminder p {
+    margin: 0;
+}
+
+/* Food table */
+
+.dietTableHeading {
+    color: #003087;
+    font-size: 17px;
+    margin: 18px 0 8px 0;
+}
+
+.dietTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 12px;
+    line-height: 1.35;
+    border: 2px solid #003087;
+}
+
+.dietTable th,
+.dietTable td {
+    border: 1px solid #777;
+    padding: 9px;
+    vertical-align: top;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.dietTable thead th {
+    background: #003087;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 10px 8px;
+}
+
+.dietTable tbody th {
+    background: #EAF8FD;
+    color: #003087;
+    font-weight: bold;
+    width: 18%;
+}
+
+.dietTable tbody tr:nth-child(even) td {
+    background: #F7FBFD;
+}
+
+/* Closing reminder */
+
+.dietFooter {
+    margin-top: 14px;
+    padding: 12px;
+    background: #EAF8FD;
+    border: 1px solid #003087;
+    line-height: 1.4;
+}
+
+.dietFooter strong {
+    color: #003087;
+}
+
+.dietFooter p {
+    margin: 5px 0 0 0;
+}
+
+/* PRINT SETTINGS */
+
+@media print {
+
+    .lowResidueDietPage {
+        break-before: page;
+        page-break-before: always;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 8px;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dietHeader,
+    .dietTable thead th {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .dietTable {
+        font-size: 11px;
+    }
+
+    .dietTable th,
+    .dietTable td {
+        padding: 7px;
+    }
+
+    .dietIntroduction,
+    .dietReminder,
+    .dietFooter,
+    .dietTable tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
