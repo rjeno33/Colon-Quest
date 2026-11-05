@@ -2387,6 +2387,13 @@ document
                     )
                     .innerHTML;
 
+            const dietContent =
+    document
+        .getElementById(
+            "lowResidueDietPage"
+        )
+        .innerHTML;
+
 
             const printWindow =
                 window.open(
@@ -2560,7 +2567,59 @@ document
                             width: 16px;
 
                         }
+/* LOW RESIDUE DIET - NEW PAGE */
 
+#lowResidueDietPage {
+    break-before: page;
+    page-break-before: always;
+}
+
+.lowResidueDietPage {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.lowResidueDietPage h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.dietTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1.5px solid black;
+    font-size: 10px;
+}
+
+.dietTable th,
+.dietTable td {
+    border: 1.5px solid black;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+}
+
+.dietTable thead th {
+    background: #D9EAF7;
+    font-weight: bold;
+}
+
+.dietTable tbody th {
+    background: #EAF8FD;
+    font-weight: bold;
+}
+
+.dietTable tr {
+    page-break-inside: avoid;
+}
+
+.dietFooter {
+    margin-top: 8px;
+    font-size: 10px;
+}
                     </style>
 
                 </head>
@@ -2585,6 +2644,8 @@ document
 
 
                     ${planContent}
+
+                    ${dietContent}
 
 
                 </body>
