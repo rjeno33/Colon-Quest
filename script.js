@@ -348,14 +348,14 @@ maxAppointmentTime: "21:00",
 
     preAssessment: {
         message:
-            "If you have any concerns before your procedure contact our preassessment team on 0114555444",
-        telephone: "0114555444"
+            "If you have any concerns before your procedure contact our preassessment team on  0114 2269174",
+        telephone: "0114 2269174"
     },
 
     bookingHub: {
         message:
-            "If you need to rearrange or cancel your procedure contact our booking hub on 0114334455",
-        telephone: "0114334455"
+            "If you need to rearrange or cancel your procedure contact our booking hub on 0114 2712166",
+        telephone: "0114 2712166"
     }
 },
 
@@ -696,10 +696,9 @@ maxAppointmentTime: "21:00",
                     fixedPrepTimes: true,
                     fastingTime: "12:00",
                     waterTasks: false,
-                    sennaTasks: true,
-                    sennaStartDays: 3,
+                    sennaTasks: false,
                     waterAfterPrep: false,
-                    dietStartDays: 5,
+                    dietStartDays: 2,
                     medications: [],
 
                     prepSchedule: [
@@ -734,10 +733,9 @@ maxAppointmentTime: "21:00",
                     fixedPrepTimes: true,
                     fastingTime: "12:00",
                     waterTasks: false,
-                    sennaTasks: true,
-                    sennaStartDays: 3,
+                    sennaTasks: false,
                     waterAfterPrep: false,
-                    dietStartDays: 5,
+                    dietStartDays: 2,
                     medications: [],
 
                     prepSchedule: [
@@ -772,10 +770,9 @@ maxAppointmentTime: "21:00",
                     fixedPrepTimes: true,
                     fastingTime: "12:00",
                     waterTasks: false,
-                    sennaTasks: true,
-                    sennaStartDays: 3,
+                    sennaTasks: false,
                     waterAfterPrep: false,
-                    dietStartDays: 5,
+                    dietStartDays: 2,
                     medications: [],
 
                     prepSchedule: [
