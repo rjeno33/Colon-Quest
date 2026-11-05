@@ -332,6 +332,7 @@ maxAppointmentTime: "21:00",
         "Royal Hallamshire Hospital"
     ],
 
+    
     patientSupport: {
     enabled: true,
 
@@ -359,6 +360,13 @@ maxAppointmentTime: "21:00",
     }
 },
 
+    patientInformation: {
+
+        lowResidueDiet: {
+            enabled: true
+        }
+
+    },
     
 
     bowelPreps: {
@@ -924,6 +932,170 @@ function addPatientSupport(profile) {
     plan.innerHTML += html;
 }
 
+
+//===============================
+// Low Residue Diet Information
+//===============================
+
+function addLowResidueDiet(profile) {
+
+    // Check whether this hospital has enabled the diet page
+
+    const diet = profile.patientInformation?.lowResidueDiet;
+
+    if (!diet || !diet.enabled) {
+        return;
+    }
+
+    let html = "";
+
+    html += "<div class='lowResidueDietPage'>";
+
+    // Page heading
+
+    html += "<div class='dietHeader'>";
+
+    html += "<h1>COLON QUEST</h1>";
+
+    html += "<p>Patient Colonoscopy Preparation Plan</p>";
+
+    html += "<h2>Low Residue Diet</h2>";
+
+    html += "<p>IMPORTANT DIETARY INFORMATION</p>";
+
+    html += "</div>";
+
+    // Introduction
+
+    html += "<div class='dietIntroduction'>";
+
+    html += "<h3>Why is this important?</h3>";
+
+    html += "<p>You have been referred for an examination of your large bowel. To ensure a successful examination it is very important that your bowel is totally empty. Fibre in your diet takes a long time to be digested and can still be present in your bowel even after taking all of your bowel preparation.</p>";
+
+    html += "</div>";
+
+    // When to follow the diet
+
+    html += "<div class='dietReminder'>";
+
+    html += "<h3>When should I follow this diet?</h3>";
+
+    html += "<p>We recommend that you eat a low residue diet for the 2 days before taking your bowel preparation. In some cases you may be instructed to eat a low residue diet for longer.</p>";
+
+    html += "</div>";
+
+    // Food table heading
+
+    html += "<h3 class='dietTableHeading'>Foods to include and foods to avoid</h3>";
+
+    html += "<table class='dietTable'>";
+
+    html += "<thead><tr>";
+
+    html += "<th>Food group</th>";
+
+    html += "<th>Foods to include</th>";
+
+    html += "<th>Foods to avoid</th>";
+
+    html += "</tr></thead>";
+
+    html += "<tbody>";
+
+    // Meat and fish
+
+    html += "<tr>";
+
+    html += "<th>Meat / fish</th>";
+
+    html += "<td>Minced or well cooked – lean pork, skinless poultry and fish.</td>";
+
+    html += "<td>Beef, lamb, ham, veal.</td>";
+
+    html += "</tr>";
+
+    // Fruit and vegetables
+
+    html += "<tr>";
+
+    html += "<th>Fruit / vegetables</th>";
+
+    html += "<td>Potatoes – boiled, creamed, mashed or baked (no skins).</td>";
+
+    html += "<td>All fruit and vegetables.</td>";
+
+    html += "</tr>";
+
+    // Pasta and rice
+
+    html += "<tr>";
+
+    html += "<th>Pasta / rice</th>";
+
+    html += "<td>Plain macaroni, spaghetti, noodles. Plain boiled white rice.</td>";
+
+    html += "<td>Wholemeal pasta or spaghetti. Brown rice, vegetable rice.</td>";
+
+    html += "</tr>";
+
+    // Cereals and bread
+
+    html += "<tr>";
+
+    html += "<th>Cereals / bread</th>";
+
+    html += "<td>Cornflakes, crisped rice. White bread, plain teacakes and plain rolls.</td>";
+
+    html += "<td>Weetabix, Bran flakes, muesli. Wholemeal, oatmeal or granary bread. High fibre white bread. Fruit teacakes or rolls with seeds or oats on top.</td>";
+
+    html += "</tr>";
+
+    // Biscuits, pastries and puddings
+
+    html += "<tr>";
+
+    html += "<th>Biscuits / pastries / puddings</th>";
+
+    html += "<td>Plain biscuits and crackers. Plain sponges, white flour, plain scones, plain pancakes, plain muffins. Jelly (not red coloured), ice cream, custard. Yorkshire puddings.</td>";
+
+    html += "<td>Wholemeal crackers, bran biscuits, digestives, oatcakes and fruit biscuits. Wholemeal flour, fruitcake, cakes with seeded jam fillings, wholemeal / fruit scones. Fruit, nut, or muesli yogurts.</td>";
+
+    html += "</tr>";
+
+    // Other foods
+
+    html += "<tr>";
+
+    html += "<th>Other</th>";
+
+    html += "<td>Soft cheese, cottage cheese, cheese sauce. Eggs, clear soup, vinegar, mustard, herbs, Worcester sauce, sweets, sugar, seedless and shredless jam / marmalade, honey, golden syrup, treacle, lemon curd, margarine.</td>";
+
+    html += "<td>Pickles, chutney, thick vegetable / lentil soup, jam / marmalade with skins or pips.</td>";
+
+    html += "</tr>";
+
+    html += "</tbody>";
+
+    html += "</table>";
+
+    // Closing reminder
+
+    html += "<div class='dietFooter'>";
+
+    html += "<strong>Remember</strong>";
+
+    html += "<p>Follow your personalised preparation plan on page 1 and any additional instructions given to you by your endoscopy team.</p>";
+
+    html += "</div>";
+
+    html += "</div>";
+
+    // Add the dietary page to the plan
+
+    plan.innerHTML += html;
+
+}
 
 
 //=============================
