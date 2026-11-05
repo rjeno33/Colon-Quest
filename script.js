@@ -2640,11 +2640,11 @@ document
                     </div>
 
 
-                    ${summary}
-
+${summary}
 
 ${planContent}
 
+<div style="break-before: page; page-break-before: always;"></div>
 
 <div class="dietPrintPage">
     ${dietContent}
