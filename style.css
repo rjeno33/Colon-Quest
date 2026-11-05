@@ -319,232 +319,13 @@ select:focus {
 }
 
 
+
 /* ==============================
    LOW RESIDUE DIET PAGE
    ============================== */
 
 .lowResidueDietPage {
-
     background: white;
-
-    margin-top: 30px;
-
-    padding: 25px;
-
-    border: 1px solid #41B6E6;
-
-    border-radius: 10px;
-
-    text-align: left;
-
-    color: #222;
-
-    box-sizing: border-box;
-
-}
-
-.dietHeader {
-
-    text-align: center;
-
-    border-bottom: 3px solid #41B6E6;
-
-    padding-bottom: 15px;
-
-    margin-bottom: 20px;
-
-}
-
-.dietHeader h1 {
-
-    color: darkblue;
-
-    margin-bottom: 5px;
-
-}
-
-.dietHeader h2 {
-
-    color: #003087;
-
-    margin-bottom: 5px;
-
-}
-
-.dietHeader p {
-
-    margin: 5px 0;
-
-}
-
-.dietIntroduction,
-.dietReminder {
-
-    padding: 12px 15px;
-
-    margin-bottom: 15px;
-
-    border: 1px solid #41B6E6;
-
-    border-radius: 8px;
-
-    line-height: 1.5;
-
-}
-
-.dietIntroduction h3,
-.dietReminder h3 {
-
-    color: #003087;
-
-    margin-top: 0;
-
-}
-
-.dietTableHeading {
-
-    color: #003087;
-
-    margin-top: 20px;
-
-}
-
-.dietTable {
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    table-layout: fixed;
-
-    font-size: 13px;
-
-    text-align: left;
-
-}
-
-.dietTable th,
-.dietTable td {
-
-    border: 1px solid #999;
-
-    padding: 8px;
-
-    vertical-align: top;
-
-    overflow-wrap: break-word;
-
-    line-height: 1.4;
-
-}
-
-.dietTable th {
-
-    background: #EAF8FD;
-
-    color: #003087;
-
-}
-
-.dietTable th:first-child {
-
-    width: 20%;
-
-}
-
-.dietTable th:nth-child(2),
-.dietTable th:nth-child(3) {
-
-    width: 40%;
-
-}
-
-.dietFooter {
-
-    margin-top: 18px;
-
-    padding: 12px;
-
-    background: #EAF8FD;
-
-    border-left: 4px solid #41B6E6;
-
-    line-height: 1.5;
-
-}
-
-.dietFooter strong {
-
-    color: #003087;
-
-}
-
-
-/* ==============================
-   PRINT SETTINGS
-   ============================== */
-
-@media print {
-
-    .lowResidueDietPage {
-
-        break-before: page;
-
-        page-break-before: always;
-
-        border: none;
-
-        border-radius: 0;
-
-        margin: 0;
-
-        padding: 10px;
-
-        width: 100%;
-
-        box-shadow: none;
-
-    }
-
-    .dietHeader h1 {
-
-        color: #003087;
-
-    }
-
-    .dietTable {
-
-        font-size: 11px;
-
-    }
-
-    .dietTable th,
-    .dietTable td {
-
-        padding: 6px;
-
-    }
-
-    .dietIntroduction,
-    .dietReminder,
-    .dietFooter {
-
-        break-inside: avoid;
-
-        page-break-inside: avoid;
-
-    }
-
-}
-
-////new code///
-
-/* ==============================
-   LOW RESIDUE DIET - IMPROVED LAYOUT
-   ============================== */
-
-.lowResidueDietPage {
-    background: #ffffff;
     margin-top: 30px;
     padding: 22px;
     border: 2px solid #003087;
@@ -552,9 +333,8 @@ select:focus {
     text-align: left;
     color: #222;
     box-sizing: border-box;
+    display: block;
 }
-
-/* Main heading */
 
 .dietHeader {
     text-align: center;
@@ -580,11 +360,9 @@ select:focus {
     margin: 4px 0;
 }
 
-/* Information sections */
-
 .dietIntroduction,
 .dietReminder {
-    background: #ffffff;
+    background: white;
     border: 1px solid #003087;
     border-radius: 3px;
     padding: 10px 14px;
@@ -604,8 +382,6 @@ select:focus {
     margin: 0;
 }
 
-/* Food table */
-
 .dietTableHeading {
     color: #003087;
     font-size: 17px;
@@ -618,12 +394,12 @@ select:focus {
     table-layout: fixed;
     font-size: 12px;
     line-height: 1.35;
-    border: 2px solid #003087;
+    border: 2px solid #000;
 }
 
 .dietTable th,
 .dietTable td {
-    border: 1px solid #777;
+    border: 2px solid #000;
     padding: 9px;
     vertical-align: top;
     text-align: left;
@@ -631,24 +407,21 @@ select:focus {
 }
 
 .dietTable thead th {
-    background: #003087;
-    color: #ffffff;
+    background: #D9EAF7;
+    color: #003087;
     font-size: 13px;
-    padding: 10px 8px;
 }
 
 .dietTable tbody th {
     background: #EAF8FD;
     color: #003087;
     font-weight: bold;
-    width: 18%;
+    width: 20%;
 }
 
 .dietTable tbody tr:nth-child(even) td {
     background: #F7FBFD;
 }
-
-/* Closing reminder */
 
 .dietFooter {
     margin-top: 14px;
@@ -666,70 +439,70 @@ select:focus {
     margin: 5px 0 0 0;
 }
 
-/* PRINT SETTINGS */
 
 /* ==============================
-   PRINT SETTINGS - DIET PAGE
+   PRINT SETTINGS
    ============================== */
 
 @media print {
 
+    /* Start the entire diet section on a new sheet */
+
     .lowResidueDietPage {
-        break-before: page;
-        page-break-before: always;
-        border: none;
-        border-radius: 0;
-        margin: 0;
-        padding: 8px;
-        width: 100%;
-        box-shadow: none;
+        display: block !important;
+        clear: both !important;
+
+        break-before: page !important;
+        page-break-before: always !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+
+        margin: 0 !important;
+        padding: 8px !important;
+        width: 100% !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
     }
 
-    /* Make the food table look like a proper grid */
+    /* Strong, visible table grid */
 
     .dietTable {
         width: 100%;
         border-collapse: collapse !important;
+        border-spacing: 0 !important;
         table-layout: fixed;
-        border: 2px solid #000000 !important;
+        border: 2px solid black !important;
         font-size: 11px;
     }
 
     .dietTable th,
     .dietTable td {
-        border: 1px solid #000000 !important;
-        padding: 9px 8px !important;
+        border: 2px solid black !important;
+        padding: 8px !important;
         vertical-align: top;
         text-align: left;
-        line-height: 1.4;
+        line-height: 1.35;
     }
-
-    /* Column heading row */
 
     .dietTable thead th {
         background: #D9EAF7 !important;
-        color: #000000 !important;
+        color: #000 !important;
         font-weight: bold;
-        border: 1px solid #000000 !important;
-        border-bottom: 2px solid #000000 !important;
     }
-
-    /* Food group column */
 
     .dietTable tbody th {
         background: #EAF8FD !important;
         color: #003087 !important;
         font-weight: bold;
-        border: 1px solid #000000 !important;
-        width: 20%;
     }
 
-    /* Keep each food group visually together */
+    /* Keep individual food groups together */
 
     .dietTable tbody tr {
-        border: 1px solid #000000 !important;
-        break-inside: avoid;
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
     }
 
     .dietIntroduction,
@@ -739,11 +512,12 @@ select:focus {
         page-break-inside: avoid;
     }
 
-    /* Preserve shaded backgrounds when printing */
+    /* Preserve colours in print */
 
-    .lowResidueDietPage,
+    .dietHeader,
     .dietTable th,
-    .dietTable td {
+    .dietTable td,
+    .dietFooter {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
