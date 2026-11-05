@@ -444,27 +444,13 @@ select:focus {
    PRINT SETTINGS
    ============================== */
 
-@media print {
-
-    /* Start the entire diet section on a new sheet */
-
-    .lowResidueDietPage {
-        display: block !important;
-        clear: both !important;
-
-        break-before: page !important;
-        page-break-before: always !important;
-
-        break-inside: avoid !important;
-        page-break-inside: avoid !important;
-
-        margin: 0 !important;
-        padding: 8px !important;
-        width: 100% !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-    }
+.dietPrintPage {
+    display: block;
+    break-before: page !important;
+    page-break-before: always !important;
+    break-inside: auto;
+    page-break-inside: auto;
+}
 
     /* Strong, visible table grid */
 
