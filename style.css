@@ -456,15 +456,10 @@ select:focus {
 
 @media print {
 
-    .dietPrintPage {
-        display: block !important;
-        break-before: page !important;
-        page-break-before: always !important;
-        break-inside: auto !important;
-        page-break-inside: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+.dietPrintPage {
+    display: block;
+    margin-top: 0;
+}
 
     .lowResidueDietPage {
         margin: 0 !important;
