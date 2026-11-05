@@ -2234,6 +2234,13 @@ console.log("Current regimen:", activeProfile.currentRegimen);
 
     addPatientSupport(activeProfile);
 
+
+    // =========================
+    // Add Low Residue Diet Page
+    // =========================
+
+    addLowResidueDiet(activeProfile);
+
 }
 
 
