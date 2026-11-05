@@ -668,6 +668,10 @@ select:focus {
 
 /* PRINT SETTINGS */
 
+/* ==============================
+   PRINT SETTINGS - DIET PAGE
+   ============================== */
+
 @media print {
 
     .lowResidueDietPage {
@@ -681,26 +685,66 @@ select:focus {
         box-shadow: none;
     }
 
-    .dietHeader,
-    .dietTable thead th {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
+    /* Make the food table look like a proper grid */
 
     .dietTable {
+        width: 100%;
+        border-collapse: collapse !important;
+        table-layout: fixed;
+        border: 2px solid #000000 !important;
         font-size: 11px;
     }
 
     .dietTable th,
     .dietTable td {
-        padding: 7px;
+        border: 1px solid #000000 !important;
+        padding: 9px 8px !important;
+        vertical-align: top;
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    /* Column heading row */
+
+    .dietTable thead th {
+        background: #D9EAF7 !important;
+        color: #000000 !important;
+        font-weight: bold;
+        border: 1px solid #000000 !important;
+        border-bottom: 2px solid #000000 !important;
+    }
+
+    /* Food group column */
+
+    .dietTable tbody th {
+        background: #EAF8FD !important;
+        color: #003087 !important;
+        font-weight: bold;
+        border: 1px solid #000000 !important;
+        width: 20%;
+    }
+
+    /* Keep each food group visually together */
+
+    .dietTable tbody tr {
+        border: 1px solid #000000 !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 
     .dietIntroduction,
     .dietReminder,
-    .dietFooter,
-    .dietTable tr {
+    .dietFooter {
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+
+    /* Preserve shaded backgrounds when printing */
+
+    .lowResidueDietPage,
+    .dietTable th,
+    .dietTable td {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 }
