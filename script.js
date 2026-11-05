@@ -1093,7 +1093,7 @@ function addLowResidueDiet(profile) {
 
     // Add the dietary page to the plan
 
-    plan.innerHTML += html;
+    document.getElementById("lowResidueDietPage").innerHTML = html;
 
 }
 
