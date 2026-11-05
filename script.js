@@ -2643,9 +2643,12 @@ document
                     ${summary}
 
 
-                    ${planContent}
+${planContent}
 
-                    ${dietContent}
+
+<div class="dietPrintPage">
+    ${dietContent}
+</div>
 
 
                 </body>
