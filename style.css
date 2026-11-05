@@ -522,3 +522,12 @@ select:focus {
         -webkit-print-color-adjust: exact;
     }
 }
+
+/* Keep the low residue diet on a new printed page */
+@media print {
+    #lowResidueDietPage {
+        display: block !important;
+        break-before: page !important;
+        page-break-before: always !important;
+    }
+}
