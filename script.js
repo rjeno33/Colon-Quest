@@ -1281,7 +1281,6 @@ function populatePreps() {
 // Add Task
 // =========================
 
-
 function addTask(task) {
 
     const icons = {
@@ -1309,17 +1308,11 @@ function addTask(task) {
 
     };
 
-
     return `
-
         <div class="task">
-
-            ${icons[task.type]}
-
+            ${icons[task.type] || ""}
             <span>${task.text}</span>
-
         </div>
-
     `;
 
 }
@@ -1329,21 +1322,23 @@ function addTask(task) {
 // Add Task List
 // =========================
 
-
 function addTaskList(tasks) {
 
-    let html = "";
+    let html = "<ul class='taskList'>";
 
     tasks.forEach(function(task) {
 
+        html += "<li>";
         html += addTask(task);
+        html += "</li>";
 
     });
+
+    html += "</ul>";
 
     return html;
 
 }
-
 
 
 
