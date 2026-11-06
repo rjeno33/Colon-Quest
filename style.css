@@ -536,6 +536,8 @@ select:focus {
     padding-left: 4px;
     margin-bottom: 8px;
     line-height: 1.4;
+    list-style-position: outside;
+    vertical-align: top;
 }
 
 .task {
