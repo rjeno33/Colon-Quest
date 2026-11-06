@@ -2540,28 +2540,40 @@ document
                         }
 
 
-                        .task {
+.taskList {
+    margin: 6px 0;
+    padding-left: 25px;
+}
 
-                            display: flex;
+.taskList li {
+    padding-left: 4px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
 
-                            align-items:
-                                flex-start;
+.task {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    background: transparent;
+    border-radius: 0;
+}
 
-                            margin:
-                                3px 0;
+.task i {
+    width: 16px;
+    min-width: 16px;
+    flex-shrink: 0;
+    margin: 2px 0 0 0;
+    font-size: 16px;
+    text-align: center;
+}
 
-                            line-height: 1.2;
-
-                        }
-
-
-                        .task i {
-
-                            margin-right: 6px;
-
-                            width: 16px;
-
-                        }
+.task span {
+    flex: 1;
+}
 /* LOW RESIDUE DIET - NEW PAGE */
 
 #lowResidueDietPage {
