@@ -2563,12 +2563,7 @@ document
 }
 
 .task i {
-    width: 16px;
-    min-width: 16px;
-    flex-shrink: 0;
-    margin: 2px 0 0 0;
-    font-size: 16px;
-    text-align: center;
+    display: none;
 }
 
 .task span {
